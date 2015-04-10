@@ -15,7 +15,7 @@
   },
   "validations": [],
   "relations": {
-    "user": {
+    "User": {
       "type": "belongsTo",
       "model": "User",
       "foreignKey": "user_id"
@@ -23,10 +23,10 @@
   },
   "acls": [
     {
-      "accessType": "*",
-      "permission": "DENY",
-      "principalType": "ROLE",
-      "principalId": "$everyone"
+        "accessType": "*",
+        "permission": "DENY",
+        "principalType": "ROLE",
+        "principalId": "$everyone"
     },
     {
       "accessType": "WRITE",
@@ -38,7 +38,8 @@
       "accessType": "READ",
       "permission": "ALLOW",
       "principalType": "ROLE",
-      "principalId": "$owner"
+      "principalId": "$authenticated",
+      "property": "find"
     }
   ],
   "methods": []
