@@ -25,5 +25,9 @@
   "Role": {
     "dataSource": "db",
     "public": false
+  },
+  "Package": {
+    "dataSource": "db",
+    "public": true
   }
 }

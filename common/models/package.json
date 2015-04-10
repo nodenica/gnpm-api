@@ -1,0 +1,45 @@
+{
+  "name": "Package",
+  "plural": "Packages",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "properties": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "user_id": {
+      "type": "number",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {
+    "user": {
+      "type": "belongsTo",
+      "model": "User",
+      "foreignKey": "user_id"
+    }
+  },
+  "acls": [
+    {
+      "accessType": "*",
+      "permission": "DENY",
+      "principalType": "ROLE",
+      "principalId": "$everyone"
+    },
+    {
+      "accessType": "WRITE",
+      "permission": "ALLOW",
+      "principalType": "ROLE",
+      "principalId": "$authenticated"
+    },
+    {
+      "accessType": "READ",
+      "permission": "ALLOW",
+      "principalType": "ROLE",
+      "principalId": "$owner"
+    }
+  ],
+  "methods": []
+}

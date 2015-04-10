@@ -1,6 +1,7 @@
 {
   "db": {
+    "database": "gnpm",
     "name": "db",
-    "connector": "memory"
+    "connector": "postgresql"
   }
 }
